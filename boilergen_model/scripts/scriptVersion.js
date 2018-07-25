@@ -1,8 +1,11 @@
 const exec = require('child_process').exec
 const readLineAux = require('readline-sync');
 const fs = require('fs');
-var version = require('./src/constants/version.json');
-var dataFile = fs.readFileSync('./src/constants/version.json', 'utf-8');
+const path = require("path");
+let pathFile = path.resolve(__dirname, '../src/constants/version.json');
+var version = require('../src/constants/version.json');
+var dataFile = fs.readFileSync(pathFile, 'utf-8');
+console.log(dataFile);
 
 let versionNumber = version.NUMBER.split(".");
 
@@ -69,7 +72,7 @@ const phases = {
 		let finalVersion = `${versionNumber[0]}.${newFunctions}.${fix}`;
 		let newValue = dataFile.replace(`${version.NUMBER.toString()}`, `${finalVersion}`);
 		newValue = newValue.replace(`${version.MOUNTH.toString()}`, `${months[date.getMonth()]}/${date.getFullYear()}`);
-		fs.writeFileSync('./src/constants/version.json', newValue, 'utf-8');
+		fs.writeFileSync(pathFile, newValue, 'utf-8');
 		console.log(`Generating version ${finalVersion}`);
 
 	},
