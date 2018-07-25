@@ -54,7 +54,7 @@
   },
   "scripts": {
     "start": "NODE_PATH=./src node scripts/start.js --env=dev",
-    "build": "NODE_PATH=./src node scripts/build.js --env=prod",
+    "build": "npm install && node scripts/scriptVersion.js && NODE_PATH=./src node scripts/build.js --env=prod",
     "test": "NODE_PATH=./src node scripts/test.js --env=jsdom"
   },
   "jest": {
@@ -100,7 +100,10 @@
     "extends": "react-app"
   },
   "devDependencies": {
+    "child_process": "^1.0.2",
     "node-sass": "^4.7.2",
+    "path": "^0.12.7",
+    "readline-sync": "^1.4.9",
     "sass-loader": "^6.0.6"
   }
 }
