@@ -9,3 +9,7 @@ You can run this script at your projects folder with
 `sudo node boilergen.js`
 
 The boileger_model folder must be at the same level folder of the script.
+
+
+-
+Thanks @miguenetoarte for the versioning scripts
