@@ -3,6 +3,7 @@ var stdin = process.openStdin()
 var model = process.env.NODE_ENV ? process.env.NODE_ENV : 'boilergen_model';
 
 let readLineAux = false;
+let chalk = false;
 let name ='my-app';
 let seelogs = true;
 
@@ -21,16 +22,17 @@ console.log('')
 const phases = {
 'PrepareWorkspace': async function(){
     console.log('Preparing workspace...')
-    const resp = await execbash('npm install readline-sync')
+    const resp = await execbash('npm install readline-sync chalk')
     readLineAux = require('readline-sync')
+	chalk = require('chalk');
     const global = await execbash('sudo npm i --global react-scripts')
     return new Promise(resolve => {
         resolve()
     })
 },
 'GetProjectData': async function(){
-    name = readLineAux.question('What is your app name? ')
-    /* seelogs = (readLineAux.question('Whanna see some logs? (y/n)') === 'y') ? true : false */
+	process.stdin.isTTY = process.stdout.isTTY = true;
+    name = readLineAux.question(chalk.green('What is your app name? '));
     return new Promise(resolve => {
         resolve()
     })

@@ -4,8 +4,8 @@
   "description": "### Generator based on create-react-app for some small apps",
   "main": "boilergen.js",
   "scripts": {
-    "boilergen": "sudo NODE_ENV=boilergen_model node ./boilergen.js",
-    "boilergen_pwa": "sudo NODE_ENV=boilergen_pwa node ./boilergen.js"
+    "boilergen": "NODE_ENV=boilergen_model node ./boilergen.js",
+    "boilergen_pwa": "NODE_ENV=boilergen_pwa node ./boilergen.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/igorcaldeira/boilergen#readme",
   "dependencies": {
+    "chalk": "^2.4.1",
     "cross-env": "^5.2.0",
     "readline-sync": "^1.4.9"
   }

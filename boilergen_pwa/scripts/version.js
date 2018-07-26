@@ -39,6 +39,7 @@ let months = {
 
 const phases = {
 	'questionFix': async function(){
+		process.stdin.isTTY = process.stdout.isTTY = true;
 		fix = readLineAux.question('Build is a FIX? (y/n)');
 		fix = fix.toLocaleLowerCase() === 'y' ? true : false;
 		return new Promise(resolve => {
@@ -53,6 +54,7 @@ const phases = {
 		}
 	},
 	'questionNewFunctions': async function() {
+		process.stdin.isTTY = process.stdout.isTTY = true;
 		newFunctions = readLineAux.question('Build has NEW FUNCTIONS? (y/n)');
 		newFunctions = newFunctions.toLocaleLowerCase() === 'y' ? true : false;
 		return new Promise(resolve => {
