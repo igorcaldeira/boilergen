@@ -16,3 +16,6 @@ You can run `npm run boilergen_pwa` to work with pwa
 
 Includes [SASS](https://sass-lang.com/), [material ui](https://v1-3-0.material-ui.com/), [redux](https://redux.js.org/), [redux-saga](https://redux-saga.js.org/), [redux-persist](https://github.com/rt2zz/redux-persist) e [reselect](https://github.com/reduxjs/reselect)
 
+-
+-
+Thanks @miguenetoarte for the versioning scripts and pwa model
