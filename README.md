@@ -12,4 +12,4 @@ The boileger_model folder must be at the same level folder of the script.
 
 
 -
-Thanks @miguenetoarte for the versioning scripts
+Thanks @miguenetoarte for the versioning scripts and pwa model
