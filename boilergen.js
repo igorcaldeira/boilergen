@@ -1,5 +1,6 @@
 var exec = require('child_process').exec
 var stdin = process.openStdin()
+var model = process.env.NODE_ENV ? process.env.NODE_ENV : 'boilergen_model';
 
 let readLineAux = false;
 let name ='my-app';
@@ -14,10 +15,7 @@ const execbash = function(command){
     })
 }
 
-console.log('')
-console.log('')
-console.log('Boilergen CLI v1')
-console.log('')
+console.log(model.toUpperCase()+' CLI v1')
 console.log('')
 
 const phases = {
@@ -31,22 +29,26 @@ const phases = {
     })
 },
 'GetProjectData': async function(){
-    name = readLineAux.question('What is your app name?')
+    name = readLineAux.question('What is your app name? ')
     /* seelogs = (readLineAux.question('Whanna see some logs? (y/n)') === 'y') ? true : false */
     return new Promise(resolve => {
         resolve()
     })
 },
 'CreateProject': async function(){
+    console.log(model);
     console.log("Creating app... \033[0;32m (it can take a while, time to grab a coffee) \033[0m ")
     await execbash('npx create-react-app '+name)
     console.log('Ejecting app... \033[0;32m (it can take a while too, time to grab some tea) \033[0m ')
     await execbash('cd '+name+' && echo "y" | sudo react-scripts eject ')
-    console.log('Copying model... \033[0;32m (this one is blazing fast, i swear) \033[0m ')
+    console.log(`Copying ${model}...  (this one is blazing fast, i swear) `)
     await execbash('cd '+name+' && rm -rf ./src')
-    await execbash('cp -r ./boilergen_model/* ./'+name+'/')
+    console.log(model);
+    await execbash('cp -r ./'+model+'/* ./'+name+'/')
+    await execbash('cd '+name+' && npm install')
     console.log('Getting some libs with yarn... \033[0;32m (Almost there, trust me) \033[0m ')
-    await execbash('cd '+name+' && yarn')
+    await execbash('yarn')
+    await execbash('npm start')
     
     return new Promise(resolve => {
         resolve()
@@ -69,8 +71,6 @@ const phases = {
     })
 },
 'CleanWorkspace': async function(){
-    const resp1 = await execbash('rm -rf package.json')
-    const resp2 = await execbash('rm -rf package-lock.json')
     const resp3 = await execbash('rm -rf node_modules')
     return new Promise(resolve => {
         resolve()

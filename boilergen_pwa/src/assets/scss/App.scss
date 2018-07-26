@@ -1,0 +1,21 @@
+$fontBold: 'GothanPro Bold';
+$fontRegular: 'GothanPro Regular';
+
+@font-face {
+  font-family: $fontRegular;
+  src: url('../fonts/Gothan/GothaProReg.otf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $fontBold;
+  src: url('../fonts/Gothan/GothaProBol.otf');
+  font-weight: 500;
+  font-style: normal;
+}
+
+body {
+  background-color: #f5f5f5;
+  font-family: $fontRegular;
+}

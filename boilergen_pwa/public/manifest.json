@@ -1,0 +1,20 @@
+{
+  "name": "BOILERGEN PWA",
+  "short_name": "PWA",
+  "icons": [
+    {
+      "src": "/assets/logo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpg"
+    }
+  ],
+  "serviceworker": {
+    "src": "service-worker.js",
+    "scope": "/",
+    "update_via_cache": "none"
+  },
+  "start_url": "/?utm_source=homescreen",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#0a63a9"
+}
