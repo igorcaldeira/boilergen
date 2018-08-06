@@ -70,10 +70,11 @@
     "zencoder": "^2.0.1"
   },
   "scripts": {
-    "start": "node scripts/start.js",
-    "build": "npm install && node scripts/writeServiceWorker.js && node scripts/version.js && node scripts/build.js --env=prod",
+    "start": "node -r dotenv/config scripts/configEnvironment.dev.js && node scripts/start.js",
+    "build": "npm install && node -r dotenv/config scripts/configEnvironment.js && node scripts/writeServiceWorker.js && node scripts/version.js && node scripts/build.js --env=prod",
+"build-hml": "npm install && node -r dotenv/config scripts/configEnvironment.js && node scripts/writeServiceWorker.js && node scripts/version.js && node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "dev": "node scripts/build.js && node server.js"
+    "dev": "node -r dotenv/config scripts/configEnvironment.dev.js && node scripts/build.js && node server.js"
   },
   "jest": {
     "collectCoverageFrom": [
