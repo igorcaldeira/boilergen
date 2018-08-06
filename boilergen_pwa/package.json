@@ -120,7 +120,6 @@
   },
   "devDependencies": {
     "child_process": "^1.0.2",
-    "readline-sync": "^1.4.9",
-    "dotenv": "^4.0.0"
+    "readline-sync": "^1.4.9"
   }
 }

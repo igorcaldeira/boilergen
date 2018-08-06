@@ -47,7 +47,7 @@ const phases = {
     await execbash('cd '+name+' && rm -rf ./src')
     console.log(model);
     await execbash('cp -r ./'+model+'/* ./'+name+'/')
-    await execbash('cd '+name+' && npm install')
+    await execbash('cd '+name+' && touch .env && npm install')
     console.log('Getting some libs with yarn... \033[0;32m (Almost there, trust me) \033[0m ')
     await execbash('yarn')
     await execbash('npm start')
