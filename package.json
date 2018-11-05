@@ -1,6 +1,6 @@
 {
   "name": "boilergen",
-  "version": "1.0.0",
+  "version": "0.2",
   "description": "### Generator based on create-react-app for some small apps",
   "main": "boilergen.js",
   "scripts": {

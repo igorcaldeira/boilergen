@@ -1,6 +1,8 @@
+import {models} from './models.js'
+
 var exec = require('child_process').exec
 var stdin = process.openStdin()
-var model = process.env.NODE_ENV ? process.env.NODE_ENV : 'boilergen_model';
+var model = '';
 
 let readLineAux = false;
 let chalk = false;
@@ -10,13 +12,15 @@ let seelogs = true;
 const execbash = function(command){
     return new Promise(resolve => {
       exec(command, (error, stdout, stderr) => {
-        /* console.log(stdout) */
+        if(seelogs)
+            console.log(stdout)
+        
         resolve(stdout)
       })
     })
 }
 
-console.log(model.toUpperCase()+' CLI v1')
+console.log(model.toUpperCase()+' CLI v0.2')
 console.log('')
 
 const phases = {
@@ -31,7 +35,14 @@ const phases = {
     })
 },
 'GetProjectData': async function(){
-	process.stdin.isTTY = process.stdout.isTTY = true;
+    process.stdin.isTTY = process.stdout.isTTY = true;
+    
+    modelOption = readLineAux.question(chalk.green(`What model whould you like to use?
+    \n
+    `));
+
+    model = process.env.NODE_ENV ? process.env.NODE_ENV : 'boilergen_model'
+
     name = readLineAux.question(chalk.green('What is your app name? '));
     return new Promise(resolve => {
         resolve()
@@ -82,11 +93,12 @@ const phases = {
 }
 
 const createNewApp = async function(){
-    await phases.PrepareWorkspace()
-    await phases.GetProjectData()
-    await phases.CreateProject()
-    await phases.FinalInformative()
-    await phases.CleanWorkspace()
+    console.log('models', models)
+    // await phases.PrepareWorkspace()
+    // await phases.GetProjectData()
+    // await phases.CreateProject()
+    // await phases.FinalInformative()
+    // await phases.CleanWorkspace()
     process.exit()
 }
 
