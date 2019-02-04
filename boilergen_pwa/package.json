@@ -1,14 +1,13 @@
 {
   "name": "boilergen_pwa",
   "author": "Miguel Neto - https://github.com/miguenetoarte",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^1.3.1",
     "@material-ui/icons": "^1.1.0",
     "ajv": "^6.0.0",
     "autoprefixer": "7.1.6",
-    "aws-sdk": "^2.275.1",
     "axios": "^0.18.0",
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
@@ -58,7 +57,6 @@
     "resolve": "1.6.0",
     "rxjs": "^6.2.1",
     "rxjs-compat": "^6.2.1",
-    "s3fs": "^2.5.0",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.19.0",
     "sw-precache-webpack-plugin": "0.11.4",
@@ -66,15 +64,17 @@
     "webpack": "3.8.1",
     "webpack-dev-server": "2.9.4",
     "webpack-manifest-plugin": "1.3.2",
-    "whatwg-fetch": "2.0.3",
-    "zencoder": "^2.0.1"
+    "whatwg-fetch": "2.0.3"
   },
   "scripts": {
     "start": "node -r dotenv/config scripts/configEnvironment.dev.js && node scripts/start.js",
-    "build": "npm install && node -r dotenv/config scripts/configEnvironment.js && node scripts/writeServiceWorker.js && node scripts/version.js && node scripts/build.js --env=prod",
-"build-hml": "npm install && node -r dotenv/config scripts/configEnvironment.js && node scripts/writeServiceWorker.js && node scripts/version.js && node scripts/build.js",
+    "start-hml": "node -r dotenv/config scripts/configEnvironment.hml.js && node scripts/start.js",
+    "start-prd": "node -r dotenv/config scripts/configEnvironment.js && node scripts/start.js",
+    "build-prd": "npm install && node -r dotenv/config scripts/configEnvironment.js && node scripts/writeServiceWorker.js && node scripts/version.js && node scripts/build.js",
+    "build-hml": "npm install && node -r dotenv/config scripts/configEnvironment.hml.js && node scripts/writeServiceWorker.js && node scripts/version.hml.js && node scripts/build.js",
+    "build-dev": "npm install && node -r dotenv/config scripts/configEnvironment.dev.js && node scripts/writeServiceWorker.js && node scripts/version.hml.js && node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "dev": "node -r dotenv/config scripts/configEnvironment.dev.js && node scripts/build.js && node server.js"
+    "pwa": "node scripts/writeServiceWorker.js && node scripts/build.js && node server.js"
   },
   "jest": {
     "collectCoverageFrom": [
