@@ -126,5 +126,4 @@ your-app-name/
         .gitignore
         server.js
 ```
-
 Thanks @miguenetoarte for the versioning scripts and pwa model

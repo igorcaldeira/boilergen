@@ -1,6 +1,5 @@
 const exec = require('child_process').exec;
 const models = require('./models');
-
 class Boilergen {
     constructor() {
         this._model = models.react_base.path;
@@ -91,7 +90,6 @@ class Boilergen {
         await this.questionProjectModel();
         await this.createApp();
         this.finalInformative();
-
     }
 }
 
