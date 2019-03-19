@@ -8,9 +8,10 @@ You can run this script at your projects folder with
 
 `npm run boilergen` and choose option 1
 
-# Pwa React Generate
+# Pwa Reactjs Generate
 
-You can run `npm run boilergen` and choose option 2. It will start project with [Create React App](https://github.com/facebookincubator/create-react-app). 
+This project uses [React version 16.8.4](https://reactjs.org/versions). 
+You can run `npm run create-pwa` and project will start with [Create React App](https://github.com/facebookincubator/create-react-app). 
 
 ## It's includes the packages
 
