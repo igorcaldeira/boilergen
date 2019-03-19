@@ -1,0 +1,25 @@
+{
+  "name": "boilergen",
+  "version": "0.0.2",
+  "description": "### Generator based on create-react-app for some small apps",
+  "main": "boilergen.js",
+  "scripts": {
+    "boilergen": "node ./Boilergen.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/igorcaldeira/boilergen.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/igorcaldeira/boilergen/issues"
+  },
+  "homepage": "https://github.com/igorcaldeira/boilergen#readme",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "cross-env": "^5.2.0",
+    "readline-sync": "^1.4.9"
+  }
+}
