@@ -16,7 +16,7 @@ You can run `npm run create-pwa` and project will start with [Create React App](
 ## It's includes the packages
 
  - [Sass](https://sass-lang.com/)
- - [material ui](https://v1-3-0.material-ui.com/) 
+ - [material ui](https://material-ui.com/) 
  - [redux](https://redux.js.org/)
  - [redux-saga](https://redux-saga.js.org/)
  - [redux-persist](https://github.com/rt2zz/redux-persist)
