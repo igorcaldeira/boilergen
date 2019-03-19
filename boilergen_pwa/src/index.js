@@ -7,40 +7,23 @@ import registerServiceWorker from './registerServiceWorker';
 import {Provider} from 'react-redux';
 import {persistor, state} from './store/store';
 import App from "./App";
-import {createMuiTheme, MuiThemeProvider} from '@material-ui/core/styles';
-import {browserHistory, Route, Router} from 'react-router';
 import { PersistGate } from 'redux-persist/integration/react';
 import * as routers from "./constants/routers";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Login from "./containers/login/Login";
-
-const theme = createMuiTheme({
-    palette: {
-        primary: {
-            light: '#ff7961',
-            main: '#ba000d',
-            dark: '#ba000d',
-            contrastText: '#fff',
-        },
-        secondary: {
-            light: '#ff7961',
-            main: '#f44336',
-            dark: '#ba000d',
-            contrastText: '#000',
-        },
-    },
-});
+import Logout from "./containers/logout/Logout";
+import PrivateRoute from "./PrivateRoute";
 
 ReactDOM.render(
-    <MuiThemeProvider theme={theme}>
         <Provider store={state}>
 			<PersistGate loading={null} persistor={persistor}>
-				<App>
-					<Router key={Math.random()} history={browserHistory}>
-						<Route exact path={routers.ROOT} component={Login}/>
-					</Router>
-				</App>
+                    <Router key={Math.random()}>
+                        <App>
+                            <Route exact path={routers.ROOT} component={Login}/>
+                            <PrivateRoute path={routers.LOGOUT} component={Logout} />
+                        </App>
+                    </Router>
             </PersistGate>
-        </Provider>
-    </MuiThemeProvider>,
+        </Provider>,
     document.getElementById('root'));
 registerServiceWorker();

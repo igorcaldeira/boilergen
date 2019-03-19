@@ -1,25 +1,23 @@
 import * as Type from "./actionsTypes";
+import * as routers from "../../../constants/routers";
 
 const INITAL_STATE = {
-    username: '',
-    password: '',
-    device: ''
+    url: routers.ROOT,
+    stateInitial: {}
 };
 
 export default function (state = INITAL_STATE, action) {
     switch (action.type) {
-        case Type.FETCH_AUTH_SUCCESS: {
+        case Type.NAVIGATION: {
             return {
                 ...state,
-                username: action.username,
-                password: action.password,
-                device: action.device
+                url: action.url,
+                stateInitial: action.stateInitial
             }
         }
-
         default:
             return state;
     }
 };
 
-export const getAuth = (state) => state.rootState.auth;
+export const getUi = (state) => state.ui.navigation;

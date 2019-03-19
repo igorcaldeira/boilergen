@@ -8,18 +8,20 @@ You can run this script at your projects folder with
 
 `npm run boilergen` and choose option 1
 
-# Pwa React Generate
+# Pwa Reactjs Generate
 
-You can run `npm run boilergen` and choose option 2. It will start project with [Create React App](https://github.com/facebookincubator/create-react-app). 
+This project uses [React version 16.8.4](https://reactjs.org/versions). 
+You can run `npm run create-pwa` and project will start with [Create React App](https://github.com/facebookincubator/create-react-app). 
 
 ## It's includes the packages
 
  - [Sass](https://sass-lang.com/)
- - [material ui](https://v1-3-0.material-ui.com/) 
+ - [material ui](https://material-ui.com/) 
  - [redux](https://redux.js.org/)
  - [redux-saga](https://redux-saga.js.org/)
  - [redux-persist](https://github.com/rt2zz/redux-persist)
  - [reselect](https://github.com/reduxjs/reselect)
+ - [react-router-dom](https://reacttraining.com/react-router/web/guides/quick-start)
 
 ## App config
 
