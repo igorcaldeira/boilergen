@@ -21,6 +21,7 @@ You can run `npm run create-pwa` and project will start with [Create React App](
  - [redux-saga](https://redux-saga.js.org/)
  - [redux-persist](https://github.com/rt2zz/redux-persist)
  - [reselect](https://github.com/reduxjs/reselect)
+ - [react-router-dom](https://reacttraining.com/react-router/web/guides/quick-start)
 
 ## App config
 
