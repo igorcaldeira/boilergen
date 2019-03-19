@@ -37,7 +37,7 @@ class BuildGenerate {
         this._data = this._flag != PRD ? JSON.stringify(this._data, null, 4) : JSON.stringify(this._data);
         fs.writeFile(this._pathFile, this._data, (err) => {
             if (err) throw err;
-            console.log(chalk.yellow(`\nSee your local variables bellow:`));
+            console.log(chalk.yellow(`\nSee your local variables bellow, if It's ampty you can see on .env and env-example:`));
             console.log(chalk.yellow(this._data));
         });
     }
